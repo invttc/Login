@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Investor Code VIP</title>
+  </head>
+  <body>
+    <center>
+    <img src="https://i.ibb.co/sb1TYmg/Profile-Page-2021.png" width="110" height="110">
+<p>Login Investor Code VIP</p>
+
+<p>เลขที่บัญชี Country Group Securities PCL (7 หลัก)</p><input type="tel" id="cgsACC" required autofocus placeholder="012XXXX"/>
+
+</br></br>
+<button type="button" class="btn btn-outline-primary" onclick="login()">Login</button>
+<button type="button" class="btn btn-outline-success" onclick='location.replace("https://investor-code.web.app")'>Register</button>
+
+<p id="demo"></p>
+</center>
+
+<script>
+window.onload = function() {
+  initializeLiff('1655379755-VzlbGZWN');
+
+}
+
+function initializeLiff(myLiffId) {
+    liff
+        .init({
+            liffId: myLiffId
+        });
+}
+
+var x = document.getElementById("demo");
+
+
+function login() {
+
+var cgsACC = document.getElementById("cgsACC").value;
+
+     liff.getProfile().then(function(profile) {
+            var uId = profile.userId;
+            var disName = profile.displayName;
+            var picUrl = profile.pictureUrl;
+        var xos = liff.getOS();
+  x.innerHTML = "Login Process";
+var xmlhttp = new XMLHttpRequest();
+        var theUrl = "https://script.google.com/macros/s/AKfycbyUT48nWN3wipCZfc28x1KDa9KYImeSXqSlv3frxZbE-gQCRkfT/exec?cgsACC="+cgsACC+"&uId="+uId+"&disName="+disName+"&picUrl="+picUrl;
+        xmlhttp.open('GET', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
+        liff.closeWindow()
+      }});  
+}
+
+</script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
