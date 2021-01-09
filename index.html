@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,63 +15,65 @@
   <body>
     <center>
     <img src="https://i.ibb.co/VvPMBxn/Profile-Page-2021-Rev-1.png" width="110" height="110">
-<p>Login Investor Code VIP</p>
+    <p>Login Investor Code VIP</p>
+    <p>เลขที่บัญชี Country Group Securities PCL (7 หลัก)</p><input type="tel" id="cgsACC" required autofocus placeholder="Account No. 7 Digit"/>
 
-<p>เลขที่บัญชี Country Group Securities PCL (7 หลัก)</p>
-<div class="input-group mb-3">
-  <span class="input-group-text" id="cgsACC">Account No.</span>      
-    <input type="tel" class="form-control" aria-describedby="cgsACC">
-</div>
-      
-</br></br>
-<button type="button" class="btn btn-outline-primary" onclick="login()">Login</button>
-<button type="button" class="btn btn-outline-success" onclick='location.replace("https://invttc.github.io/Registor/")'>Register</button>
+    </br></br>
+    <button type="button" class="btn btn-outline-primary" onclick="login()">Login</button>
+    <button type="button" class="btn btn-outline-success" onclick='location.replace("https://invttc.github.io/Registor/")'>Register</button>
 
 <p id="demo"></p>
 </center>
 
-<script>
-window.onload = function() {
-  initializeLiff('1655379755-VzlbGZWN');
+  <script>
+  window.onload = function() {
+    initializeLiff('1655379755-VzlbGZWN');
 
-}
+  }
 
-function initializeLiff(myLiffId) {
-    liff
-        .init({
-            liffId: myLiffId
-        });
-}
+  function initializeLiff(myLiffId) {
+      liff
+          .init({
+              liffId: myLiffId
+          });
+  }
 
-var x = document.getElementById("demo");
-
-
-function login() {
-
-var cgsACC = document.getElementById("cgsACC").value;
-
-     liff.getProfile().then(function(profile) {
-            var uId = profile.userId;
-            var disName = profile.displayName;
-            var picUrl = profile.pictureUrl;
-        var xos = liff.getOS();
-  x.innerHTML = "Login Process";
-var xmlhttp = new XMLHttpRequest();
-        var theUrl = "https://script.google.com/macros/s/AKfycbyUT48nWN3wipCZfc28x1KDa9KYImeSXqSlv3frxZbE-gQCRkfT/exec?cgsACC="+cgsACC+"&uId="+uId+"&disName="+disName+"&picUrl="+picUrl;
-        xmlhttp.open('GET', theUrl);
-        xmlhttp.send();
-            xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var jsonResponse = JSON.parse(this.responseText);
-        }
-        alert(jsonResponse.desc);
-        liff.closeWindow()
-      }});  
-}
-
-</script>
+  var x = document.getElementById("demo");
 
 
+  function login() {
+
+  var cgsACC = document.getElementById("cgsACC").value;
+
+       liff.getProfile().then(function(profile) {
+         
+              var uId = profile.userId;
+              var disName = profile.displayName;
+              var picUrl = profile.pictureUrl;
+              var xos = liff.getOS();
+         
+                x.innerHTML = "Login Process";
+         
+              var xmlhttp = new XMLHttpRequest();
+              var theUrl = "https://script.google.com/macros/s/AKfycbyUT48nWN3wipCZfc28x1KDa9KYImeSXqSlv3frxZbE-gQCRkfT/exec?cgsACC="+cgsACC+"&uId="+uId+"&disName="+disName+"&picUrl="+picUrl;
+                  xmlhttp.open('GET', theUrl);
+                  xmlhttp.send();
+                  xmlhttp.onreadystatechange = function() {
+                    
+                  if (this.readyState == 4 && this.status == 200) {
+                      var jsonResponse = JSON.parse(this.responseText);
+                    
+                  }
+                    
+                  alert(jsonResponse.desc);
+                  liff.closeWindow()
+                    
+                      }
+                    }
+                  );  
+                }
+
+  </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -79,4 +82,5 @@ var xmlhttp = new XMLHttpRequest();
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
+
 </html>
