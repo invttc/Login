@@ -11,21 +11,17 @@
     <title>Investor Code VIP</title>
   </head>
   
-   <style>
-body  {
-  height: 500px;
-  background-position: center;
-  background-image: url("https://i.ibb.co/89MkRsj/Background-Login.png");
-}
-</style>
-  
   <body>
     <center>
     <img src="https://i.ibb.co/VvPMBxn/Profile-Page-2021-Rev-1.png" width="110" height="110">
 <p>Login Investor Code VIP</p>
 
-<p>เลขที่บัญชี Country Group Securities PCL (7 หลัก)</p><input type="tel" id="cgsACC" required autofocus placeholder="Account No. 7 Digit"/>
-
+<p>เลขที่บัญชี Country Group Securities PCL (7 หลัก)</p>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="cgsACC">Account No.</span>      
+    <input type="tel" class="form-control" aria-describedby="cgsACC">
+</div>
+      
 </br></br>
 <button type="button" class="btn btn-outline-primary" onclick="login()">Login</button>
 <button type="button" class="btn btn-outline-success" onclick='location.replace("https://invttc.github.io/Registor/")'>Register</button>
